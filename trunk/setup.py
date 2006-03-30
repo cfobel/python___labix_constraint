@@ -6,7 +6,7 @@ if os.path.isfile("MANIFEST"):
     os.unlink("MANIFEST")
 
 setup(name="python-constraint",
-      version = "1.0",
+      version = "1.1",
       description = "Python module for handling Constraint Solving Problems",
       author = "Gustavo Niemeyer",
       author_email = "gustavo@niemeyer.net",

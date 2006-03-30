@@ -999,7 +999,7 @@ class AllEqualConstraint(Constraint):
                     domain = domains[variable]
                     if singlevalue not in domain:
                         return False
-                    for value in domain:
+                    for value in domain[:]:
                         if value != singlevalue:
                             domain.hideValue(value)
         return True
@@ -1250,7 +1250,7 @@ class InSetConstraint(Constraint):
         set = self._set
         for variable in variables:
             domain = domains[variable]
-            for value in domain:
+            for value in domain[:]:
                 if value not in set:
                     domain.remove(value)
             vconstraints[variable].remove((self, variables))
@@ -1285,7 +1285,7 @@ class NotInSetConstraint(Constraint):
         set = self._set
         for variable in variables:
             domain = domains[variable]
-            for value in domain:
+            for value in domain[:]:
                 if value in set:
                     domain.remove(value)
             vconstraints[variable].remove((self, variables))
